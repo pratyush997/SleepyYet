@@ -48,7 +48,7 @@ namespace Project1 {
 	private: System::Windows::Forms::Button^  button2;
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::PictureBox^  pictureBox1;
-	private: System::Windows::Forms::Label^  label2;
+
 
 
 	private:
@@ -74,7 +74,6 @@ namespace Project1 {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			this->label2 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -125,9 +124,9 @@ namespace Project1 {
 			this->radioButton2->Enabled = false;
 			this->radioButton2->Location = System::Drawing::Point(193, 78);
 			this->radioButton2->Name = L"radioButton2";
-			this->radioButton2->Size = System::Drawing::Size(96, 17);
+			this->radioButton2->Size = System::Drawing::Size(114, 17);
 			this->radioButton2->TabIndex = 6;
-			this->radioButton2->Text = L"When to Sleep";
+			this->radioButton2->Text = L"Sleep Time Known";
 			this->radioButton2->UseVisualStyleBackColor = true;
 			// 
 			// radioButton3
@@ -136,9 +135,9 @@ namespace Project1 {
 			this->radioButton3->Enabled = false;
 			this->radioButton3->Location = System::Drawing::Point(193, 101);
 			this->radioButton3->Name = L"radioButton3";
-			this->radioButton3->Size = System::Drawing::Size(115, 17);
+			this->radioButton3->Size = System::Drawing::Size(116, 17);
 			this->radioButton3->TabIndex = 8;
-			this->radioButton3->Text = L"When to Wake Up";
+			this->radioButton3->Text = L"Wake Time Known";
 			this->radioButton3->UseVisualStyleBackColor = true;
 			// 
 			// button2
@@ -174,22 +173,11 @@ namespace Project1 {
 			this->pictureBox1->TabStop = false;
 			this->pictureBox1->Click += gcnew System::EventHandler(this, &MyForm::pictureBox1_Click);
 			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(23, 105);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(119, 13);
-			this->label2->TabIndex = 12;
-			this->label2->Text = L"Change Time to Unlock";
-
-			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(350, 263);
-			this->Controls->Add(this->label2);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button2);
@@ -212,7 +200,7 @@ namespace Project1 {
 
 	private: System::Void dateTimePicker1_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
 
-		this->radioButton1->Enabled = false;
+		this->radioButton1->Enabled = true;
 		this->radioButton2->Enabled = true;
 		this->radioButton3->Enabled = true;
 		
@@ -245,8 +233,8 @@ namespace Project1 {
 			dateTimePicker1->Value = DateTime::Now;
 
 			this->radioButton1->Enabled = true;
-			this->radioButton2->Enabled = false;
-			this->radioButton3->Enabled = false;
+			this->radioButton2->Enabled = true;
+			this->radioButton3->Enabled = true;
 		}
 
 		else // for radiobutton3
@@ -261,8 +249,8 @@ namespace Project1 {
 			dateTimePicker1->Value = DateTime::Now;
 
 			this->radioButton1->Enabled = true;
-			this->radioButton2->Enabled = false;
-			this->radioButton3->Enabled = false;
+			this->radioButton2->Enabled = true;
+			this->radioButton3->Enabled = true;
 		}	
 
 	}
