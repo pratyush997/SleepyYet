@@ -10,5 +10,5 @@ It requires [Microsoft Visual C++ 2013 Redistributable] (https://download.micros
 ## Credits
 
 - **darkcode** for [Sleepy Time] (sleepyti.me) 
-- Anuj Saluja for helping me to deal with WinForms (Kudus to Aman too)
-- Nisarg Kolhe ! 
+- **Anuj Saluja** for helping me to deal with WinForms (Kudus to Aman too)
+- **Nisarg Kolhe** ! 
