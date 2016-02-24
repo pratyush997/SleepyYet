@@ -230,8 +230,6 @@ namespace Project1 {
 				listView1->Items->Add(time.AddMinutes(90 * (i + 1)).ToShortTimeString());
 			}
 
-			dateTimePicker1->Value = DateTime::Now;
-
 			this->radioButton1->Enabled = true;
 			this->radioButton2->Enabled = true;
 			this->radioButton3->Enabled = true;
@@ -245,8 +243,6 @@ namespace Project1 {
 			{
 				listView1->Items->Add(time.AddMinutes(90 * (i + 1)).ToShortTimeString());
 			}
-			
-			dateTimePicker1->Value = DateTime::Now;
 
 			this->radioButton1->Enabled = true;
 			this->radioButton2->Enabled = true;
