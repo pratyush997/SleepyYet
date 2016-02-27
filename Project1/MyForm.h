@@ -34,7 +34,11 @@ namespace Project1 {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::RadioButton^  radioButton1;
+	private: System::Windows::Forms::RadioButton^  sleep_now;
+	protected:
+
+	protected:
+
 	protected:
 
 	private: System::Windows::Forms::DateTimePicker^  dateTimePicker1;
@@ -42,9 +46,11 @@ namespace Project1 {
 	private: System::Windows::Forms::Button^  button1;
 	private: DateTime time;
 	private: System::Windows::Forms::ListView^  listView1;
-	private: System::Windows::Forms::RadioButton^  radioButton2;
+	private: System::Windows::Forms::RadioButton^  sleep_known;
+	private: System::Windows::Forms::RadioButton^  wake_known;
 
-	private: System::Windows::Forms::RadioButton^  radioButton3;
+
+
 	private: System::Windows::Forms::Button^  button2;
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::PictureBox^  pictureBox1;
@@ -65,29 +71,29 @@ namespace Project1 {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
-			this->radioButton1 = (gcnew System::Windows::Forms::RadioButton());
+			this->sleep_now = (gcnew System::Windows::Forms::RadioButton());
 			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->listView1 = (gcnew System::Windows::Forms::ListView());
-			this->radioButton2 = (gcnew System::Windows::Forms::RadioButton());
-			this->radioButton3 = (gcnew System::Windows::Forms::RadioButton());
+			this->sleep_known = (gcnew System::Windows::Forms::RadioButton());
+			this->wake_known = (gcnew System::Windows::Forms::RadioButton());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
-			// radioButton1
+			// sleep_now
 			// 
-			this->radioButton1->AutoSize = true;
-			this->radioButton1->Checked = true;
-			this->radioButton1->Location = System::Drawing::Point(193, 55);
-			this->radioButton1->Name = L"radioButton1";
-			this->radioButton1->Size = System::Drawing::Size(83, 17);
-			this->radioButton1->TabIndex = 0;
-			this->radioButton1->TabStop = true;
-			this->radioButton1->Text = L"Sleep Now  ";
-			this->radioButton1->UseVisualStyleBackColor = true;
+			this->sleep_now->AutoSize = true;
+			this->sleep_now->Checked = true;
+			this->sleep_now->Location = System::Drawing::Point(193, 55);
+			this->sleep_now->Name = L"sleep_now";
+			this->sleep_now->Size = System::Drawing::Size(83, 17);
+			this->sleep_now->TabIndex = 0;
+			this->sleep_now->TabStop = true;
+			this->sleep_now->Text = L"Sleep Now  ";
+			this->sleep_now->UseVisualStyleBackColor = true;
 			// 
 			// dateTimePicker1
 			// 
@@ -118,27 +124,27 @@ namespace Project1 {
 			this->listView1->TabIndex = 5;
 			this->listView1->UseCompatibleStateImageBehavior = false;
 			// 
-			// radioButton2
+			// sleep_known
 			// 
-			this->radioButton2->AutoSize = true;
-			this->radioButton2->Enabled = false;
-			this->radioButton2->Location = System::Drawing::Point(193, 78);
-			this->radioButton2->Name = L"radioButton2";
-			this->radioButton2->Size = System::Drawing::Size(114, 17);
-			this->radioButton2->TabIndex = 6;
-			this->radioButton2->Text = L"Sleep Time Known";
-			this->radioButton2->UseVisualStyleBackColor = true;
+			this->sleep_known->AutoSize = true;
+			this->sleep_known->Enabled = false;
+			this->sleep_known->Location = System::Drawing::Point(193, 78);
+			this->sleep_known->Name = L"sleep_known";
+			this->sleep_known->Size = System::Drawing::Size(114, 17);
+			this->sleep_known->TabIndex = 6;
+			this->sleep_known->Text = L"Sleep Time Known";
+			this->sleep_known->UseVisualStyleBackColor = true;
 			// 
-			// radioButton3
+			// wake_known
 			// 
-			this->radioButton3->AutoSize = true;
-			this->radioButton3->Enabled = false;
-			this->radioButton3->Location = System::Drawing::Point(193, 101);
-			this->radioButton3->Name = L"radioButton3";
-			this->radioButton3->Size = System::Drawing::Size(116, 17);
-			this->radioButton3->TabIndex = 8;
-			this->radioButton3->Text = L"Wake Time Known";
-			this->radioButton3->UseVisualStyleBackColor = true;
+			this->wake_known->AutoSize = true;
+			this->wake_known->Enabled = false;
+			this->wake_known->Location = System::Drawing::Point(193, 101);
+			this->wake_known->Name = L"wake_known";
+			this->wake_known->Size = System::Drawing::Size(116, 17);
+			this->wake_known->TabIndex = 8;
+			this->wake_known->Text = L"Wake Time Known";
+			this->wake_known->UseVisualStyleBackColor = true;
 			// 
 			// button2
 			// 
@@ -181,12 +187,12 @@ namespace Project1 {
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button2);
-			this->Controls->Add(this->radioButton3);
-			this->Controls->Add(this->radioButton2);
+			this->Controls->Add(this->wake_known);
+			this->Controls->Add(this->sleep_known);
 			this->Controls->Add(this->listView1);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->dateTimePicker1);
-			this->Controls->Add(this->radioButton1);
+			this->Controls->Add(this->sleep_now);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximizeBox = false;
 			this->Name = L"MyForm";
@@ -201,19 +207,17 @@ namespace Project1 {
 
 	private: System::Void dateTimePicker1_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
 
-		this->radioButton1->Enabled = true;
-		this->radioButton2->Enabled = true;
-		this->radioButton3->Enabled = true;
+		this->sleep_now->Enabled = true;
+		this->sleep_known->Enabled = true;
+		this->wake_known->Enabled = true;
 		
 	}
 
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 		listView1->Clear();
-		if (radioButton1->Checked==true)
+		if (sleep_now->Checked == true)
 		{
 			time = DateTime::Now;
-			
-		//	listView1->Items->Add(time.ToLongTimeString());
 			time = time.AddMinutes(14);
 
 			for (int i = 0; i < 6; i++)
@@ -222,7 +226,7 @@ namespace Project1 {
 			}
 		}
 
-		else if (radioButton2->Checked == true)
+		else if (sleep_known->Checked == true)
 		{
 
 			time = dateTimePicker1->Value;
@@ -231,9 +235,9 @@ namespace Project1 {
 				listView1->Items->Add(time.AddMinutes(90 * (i + 1)).ToShortTimeString());
 			}
 
-			this->radioButton1->Enabled = true;
-			this->radioButton2->Enabled = true;
-			this->radioButton3->Enabled = true;
+			this->sleep_now->Enabled = true;
+			this->sleep_known->Enabled = true;
+			this->wake_known->Enabled = true;
 		}
 
 		else // for radiobutton3
@@ -245,9 +249,9 @@ namespace Project1 {
 				listView1->Items->Add(time.AddMinutes(90 * (i + 1)).ToShortTimeString());
 			}
 
-			this->radioButton1->Enabled = true;
-			this->radioButton2->Enabled = true;
-			this->radioButton3->Enabled = true;
+			this->sleep_now->Enabled = true;
+			this->sleep_known->Enabled = true;
+			this->wake_known->Enabled = true;
 		}	
 
 	}
@@ -255,13 +259,12 @@ namespace Project1 {
 private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 
 	MessageBox::Show("Inspired by Darkcode's sleepyti.me \n\nAman, You the Man!\n\npratyush997 signing off ");
-	MessageBoxButtons::OK;
+
 }
 private: System::Void pictureBox1_Click(System::Object^  sender, System::EventArgs^  e) {
 
 	System::Diagnostics::Process::Start("https://github.com/pratyush997");
 
 }
-
 };
 }
