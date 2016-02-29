@@ -54,6 +54,7 @@ namespace Project1 {
 	private: System::Windows::Forms::Button^  button2;
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::PictureBox^  pictureBox1;
+	private: System::Windows::Forms::Button^  button5;
 
 
 
@@ -80,6 +81,7 @@ namespace Project1 {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->button5 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -87,7 +89,7 @@ namespace Project1 {
 			// 
 			this->sleep_now->AutoSize = true;
 			this->sleep_now->Checked = true;
-			this->sleep_now->Location = System::Drawing::Point(193, 55);
+			this->sleep_now->Location = System::Drawing::Point(167, 59);
 			this->sleep_now->Name = L"sleep_now";
 			this->sleep_now->Size = System::Drawing::Size(83, 17);
 			this->sleep_now->TabIndex = 0;
@@ -128,7 +130,7 @@ namespace Project1 {
 			// 
 			this->sleep_known->AutoSize = true;
 			this->sleep_known->Enabled = false;
-			this->sleep_known->Location = System::Drawing::Point(193, 78);
+			this->sleep_known->Location = System::Drawing::Point(167, 82);
 			this->sleep_known->Name = L"sleep_known";
 			this->sleep_known->Size = System::Drawing::Size(114, 17);
 			this->sleep_known->TabIndex = 6;
@@ -139,7 +141,7 @@ namespace Project1 {
 			// 
 			this->wake_known->AutoSize = true;
 			this->wake_known->Enabled = false;
-			this->wake_known->Location = System::Drawing::Point(193, 101);
+			this->wake_known->Location = System::Drawing::Point(167, 105);
 			this->wake_known->Name = L"wake_known";
 			this->wake_known->Size = System::Drawing::Size(116, 17);
 			this->wake_known->TabIndex = 8;
@@ -150,7 +152,7 @@ namespace Project1 {
 			// 
 			this->button2->Location = System::Drawing::Point(40, 218);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(75, 23);
+			this->button2->Size = System::Drawing::Size(73, 23);
 			this->button2->TabIndex = 9;
 			this->button2->Text = L"About";
 			this->button2->UseVisualStyleBackColor = true;
@@ -179,11 +181,22 @@ namespace Project1 {
 			this->pictureBox1->TabStop = false;
 			this->pictureBox1->Click += gcnew System::EventHandler(this, &MyForm::pictureBox1_Click);
 			// 
+			// button5
+			// 
+			this->button5->Location = System::Drawing::Point(289, 59);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(23, 63);
+			this->button5->TabIndex = 14;
+			this->button5->Text = L"\?";
+			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &MyForm::button5_Click);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(350, 263);
+			this->Controls->Add(this->button5);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button2);
@@ -265,6 +278,10 @@ private: System::Void pictureBox1_Click(System::Object^  sender, System::EventAr
 
 	System::Diagnostics::Process::Start("https://github.com/pratyush997");
 
+}
+private: System::Void button5_Click(System::Object^  sender, System::EventArgs^  e) {
+
+	MessageBox::Show("\"Sleep Now\" : - If I Sleep now, when would I wake up.\n\n\"Sleep Time Known\" : - If I Sleep at a Given Time, when would I wake up.\n\n\"Wake Time Known\" : - When should I Sleep to wake up at a Given Time.\n\n You need to Select Time to use other Options.	");
 }
 };
 }
