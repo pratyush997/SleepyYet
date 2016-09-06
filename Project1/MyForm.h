@@ -281,7 +281,7 @@ private: System::Void pictureBox1_Click(System::Object^  sender, System::EventAr
 }
 private: System::Void button5_Click(System::Object^  sender, System::EventArgs^  e) {
 
-	MessageBox::Show("\"Sleep Now\" : - If I Sleep now, when would I wake up.\n\n\"Sleep Time Known\" : - If I Sleep at a Given Time, when would I wake up.\n\n\"Wake Time Known\" : - When should I Sleep to wake up at a Given Time.\n\n You need to Select Time to use other Options.	");
+	MessageBox::Show("\"Sleep Now\" : - If I Sleep now, when will I wake up.\n\n\"Sleep Time Known\" : - If I Sleep at a Given Time, when will I wake up.\n\n\"Wake Time Known\" : - When should I Sleep to wake up at a Given Time.\n\n You need to Select Time to use other Options. Just "Sleep Now" is enabled by default.	");
 }
 };
 }
